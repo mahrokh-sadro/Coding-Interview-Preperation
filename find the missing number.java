@@ -24,6 +24,6 @@ public int findMissing(int[] nums){
 }
 
 //time complexity 
-o(n)
+//o(n)
 //space complexity 
-o(1)
+//o(1)

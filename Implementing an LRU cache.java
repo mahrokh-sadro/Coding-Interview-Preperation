@@ -71,6 +71,6 @@ private class Node{
 }
 
 //time complexity
-o(1)
+//o(1)
 //space complexity
-o(capacity)
+//o(capacity)

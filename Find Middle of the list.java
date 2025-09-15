@@ -37,6 +37,6 @@ class Node{
 }
 
 //time complexity 
-o(n)
+//o(n)
 //space complexity 
-o(1)
+//o(1)
