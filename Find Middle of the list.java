@@ -20,6 +20,9 @@ class Node{
         this.next=next;
     }
     
+
+}
+
     //if there is 2 middles, returning the seconds one
     public Node findMiddle(Node head){
         if(head==null || head.next==null){
@@ -36,7 +39,7 @@ class Node{
         
         return slow;
     }
-}
+
 
 //time complexity 
 //o(n)
