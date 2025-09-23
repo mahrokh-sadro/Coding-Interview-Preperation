@@ -2,42 +2,39 @@
 
 // Note that the same word in the dictionary may be reused multiple times in the segmentation.
 
-
-
 class Solution {
     public boolean wordBreak(String s, List<String> wordDict) {
-       Boolean[] dp=new Boolean[s.length()];
-       return wordBreak(s, wordDict, dp,0);
+        Boolean[] dp=new Boolean[s.length()];
+        return wordBreak(s,wordDict,dp,0);
     }
 
-    private boolean wordBreak(String s, List<String> wordDict,Boolean[] dp,int index){
-       if(index==s.length()){
-        return true;
-       }
-       
-       if(dp[index]!=null){
-        return dp[index];
-       }
+    private boolean wordBreak(String s, List<String> wordDict, Boolean[] dp, int index){
+        if(s.length()==index){
+            return true;
+        }
 
-       for(String word:wordDict){
-         if(s.startsWith(word,index)){
-            if(wordBreak(s,wordDict,dp,index+word.length())){
-                return true;
+        if(dp[index]!=null){
+            return dp[index];
+        }
+
+        for(String word:wordDict){
+            if(s.startsWith(word,index)){
+                if(wordBreak(s,wordDict,dp,index+word.length())){
+                    return true;
+                }
             }
-         }
-       }
+        }
 
-       dp[index]=false;
-       return false;
+        dp[index]=false;
+        return false;
     }
 }
 
 
 //time complexity
-//o(n*k*m)
+//o(n*m*l)
 //space complexity
 //o(n)
-//n:s.length()
-//m:for(String word:wordDict)
-//k:s.startsWith(word, index)
-
+//n  s.length()
+//m  wordDict.size()
+//l  word.length()
